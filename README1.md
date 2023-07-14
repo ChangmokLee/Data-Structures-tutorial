@@ -49,12 +49,12 @@ The primary operations that can be performed on a stack are:
 
 This adds an element to the top of the stack. Here's an example of how to use the push operation in Python:
 
-\```python
+`python
 s = Stack()
 s.push("Hello")
 s.push("World")
 print(s.stack) # Output: ['Hello', 'World']
-\```
+`
 
 ### Pop
 
