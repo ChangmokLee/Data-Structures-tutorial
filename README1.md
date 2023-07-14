@@ -18,7 +18,6 @@ A Stack is a linear data structure that follows a particular order for performin
 
 In Python, we can implement a Stack using a list or an array. The end of the list can represent the top of the stack:
 
-`python
 class Stack:
 def **init**(self):
 self.stack = []
@@ -39,8 +38,6 @@ self.stack = []
     def size(self):
         return len(self.stack)
 
-`
-
 ## Stack Operations
 
 The primary operations that can be performed on a stack are:
@@ -49,46 +46,38 @@ The primary operations that can be performed on a stack are:
 
 This adds an element to the top of the stack. Here's an example of how to use the push operation in Python:
 
-`python 
 s = Stack()
 s.push("Hello")
 s.push("World")
 print(s.stack) # Output: ['Hello', 'World']
-`
 
 ### Pop
 
 This removes an element from the top of the stack. Here's an example of how to use the pop operation:
 
-`python
 s = Stack()
 s.push("Hello")
 s.push("World")
 print(s.pop()) # Output: 'World'
 print(s.stack) # Output: ['Hello']
-`
 
 ### Peek
 
 This returns the top element of the stack without removing it. Here's an example:
 
-`python
 s = Stack()
 s.push("Hello")
 s.push("World")
 print(s.peek()) # Output: 'World'
-`
 
 ### Size
 
 This returns the number of elements in the stack. Here's an example:
 
-`python
 s = Stack()
 s.push("Hello")
 s.push("World")
 print(s.size()) # Output: 2
-`
 
 ## Conclusion
 
