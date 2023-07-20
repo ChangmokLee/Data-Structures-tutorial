@@ -71,7 +71,7 @@ t.add_child('A', 'C')
 t.add_child('B', 'D')
 t.add_child('B', 'E')
 
-## #Printing the Tree should show that 'A' is the root, 'B' and 'C' are children of 'A', and 'D' and 'E' are children of 'B'
+### Printing the Tree should show that 'A' is the root, 'B' and 'C' are children of 'A', and 'D' and 'E' are children of 'B'
 
 print(t.root.data) # Output: 'A'
 print([child.data for child in t.root.children]) # Output: ['B', 'C']
