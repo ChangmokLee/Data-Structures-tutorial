@@ -1,57 +1,85 @@
-# Python Data Structures Tutorial
+# Python Data Structures Tutorial 3
 
 ## Introduction
 
-Welcome to the Python Data Structures Tutorial. In this tutorial, we will discuss the importance of data structures in programming and cover three specific data structures: Stack, Linked List, and Tree.
+Welcome to this tutorial on data structures, where we'll learn about the Tree. Let's begin by understanding what a data structure is.
 
-## Importance of Data Structures
+In computer science, a data structure is a particular way of collecting and organizing data so that we can perform operations on this data efficiently. They are the foundation of any complex programming task. In this tutorial, we're focusing on the Tree.
 
-Data structures are crucial in programming as they organize, manage, and store data efficiently. They enable programmers to perform operations on data in a more efficient manner.
+## What is a Tree?
 
-## Covered Data Structures
+A Tree is a non-linear data structure that simulates a hierarchical tree structure with a set of connected nodes. Unlike Arrays, Linked Lists, Stack and queues, which are linear data structures, a tree is hierarchical. It has a root, branches, and leaves.
 
-In this tutorial, we will be covering the following data structures:
+## Implementing a Tree in Python
 
-3. Tree
+In Python, we can use a class to define a Tree. We will define a Tree as a class, which is a blueprint for creating objects in Python.
 
-## Contact
+Here is a class called Tree that we'll use to simulate a tree of items:
 
-For any questions or assistance, please contact us at lee17005@byui.edu.
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.children = []
 
----
+class Tree:
+    def __init__(self, root):
+        self.root = Node(root)
 
-# Data Structure 3: Tree
+    def add_child(self, parent, child):
+        parent_node = self.find(parent)
+        if parent_node:
+            parent_node.children.append(Node(child))
 
-## Introduction to Trees
+    def find(self, data, node=None):
+        if node is None:
+            node = self.root
+        if node.data == data:
+            return node
+        for child in node.children:
+            found_node = self.find(data, child)
+            if found_node:
+                return found_node
+        return None
+```
 
-A Tree is a widely used abstract data type that simulates a hierarchical tree structure.
+![Tree Example Image](media/tree1.png)
 
-## Tree Terminology
+## Big O Notation in Context of Tree Operations
 
-Some important terminologies related to trees are nodes, edges, root, parent, child, and leaf.
+Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. In computer science, Big O notation is used to classify algorithms according to how their run time or space requirements grow as the input size grows.
 
-## Types of Trees
+We'll now explain the Big O notation for the Tree operations as described in the code above:
 
-We will be covering the following types of trees:
+- `add_child`: This method involves finding the parent and appending a child to it. In the worst case, this operation takes linear time, as we may need to traverse all the nodes. Therefore, the time complexity is O(n), where n is the number of nodes in the tree.
+- `find`: This method involves searching for a data value in the tree. In the worst case, we may need to visit all the nodes, so the time complexity is O(n), where n is the number of nodes in the tree.
 
-- Binary Trees
-- Binary Search Trees
-- Balanced Trees
+In summary, the methods of the Tree class described above have a time complexity of O(n), which means they take an amount of time proportional to the number of nodes in the tree.
 
-## Tree Traversal
+# Using a Tree
 
-There are three common ways to traverse trees in a depth-first order:
+Here's how we can use the Tree class to perform tree operations:
 
-- Pre-order
-- In-order
-- Post-order
+# We start by creating a new Tree
 
-## Example
+t = Tree('A')
 
-Here we will demonstrate implementing a binary search tree and performing basic operations.
+# We can add children to the Tree using the add_child method
 
----
+t.add_child('A', 'B')
+t.add_child('A', 'C')
+t.add_child('B', 'D')
+t.add_child('B', 'E')
+
+# Printing the Tree should show that 'A' is the root, 'B' and 'C' are children of 'A', and 'D' and 'E' are children of 'B'
+
+print(t.root.data) # Output: 'A'
+print([child.data for child in t.root.children]) # Output: ['B', 'C']
+
+![Tree Example Image](media/tree2.png)
 
 ## Conclusion
 
-In this tutorial, we covered three crucial data structures: stack, linked list, and tree. Each data structure has its own unique advantages and use cases. We encourage you to further explore Python data structures and continue to enhance your skills. Thank you for completing this tutorial.
+And that wraps up this introduction to the Tree data structure in Python! Understanding data structures like the Tree is crucial in programming, as they can significantly improve the efficiency of your code.
+
+Feel free to reach out at lee17005@byui.edu for any further queries or assistance. Happy coding!

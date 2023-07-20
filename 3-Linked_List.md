@@ -1,10 +1,4 @@
-# Python Data Structures Tutorial
-
-## Introduction
-
-Hello Python beginners! Welcome to this tutorial on data structures, where we'll learn about the Linked List. Let's begin by understanding what a data structure is.
-
-In computer science, a data structure is a particular way of collecting and organizing data so that we can perform operations on this data efficiently. They are the foundation of any complex programming task. In this tutorial, we're focusing on the Linked List.
+# Python Data Structures Tutorial 2
 
 ## What is a Linked List?
 
