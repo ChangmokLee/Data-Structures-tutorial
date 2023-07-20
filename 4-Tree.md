@@ -60,18 +60,18 @@ In summary, the methods of the Tree class described above have a time complexity
 
 Here's how we can use the Tree class to perform tree operations:
 
-## We start by creating a new Tree
+### We start by creating a new Tree
 
 t = Tree('A')
 
-## We can add children to the Tree using the add_child method
+### We can add children to the Tree using the add_child method
 
 t.add_child('A', 'B')
 t.add_child('A', 'C')
 t.add_child('B', 'D')
 t.add_child('B', 'E')
 
-## Printing the Tree should show that 'A' is the root, 'B' and 'C' are children of 'A', and 'D' and 'E' are children of 'B'
+## #Printing the Tree should show that 'A' is the root, 'B' and 'C' are children of 'A', and 'D' and 'E' are children of 'B'
 
 print(t.root.data) # Output: 'A'
 print([child.data for child in t.root.children]) # Output: ['B', 'C']
