@@ -2,48 +2,82 @@
 
 ## Introduction
 
-Welcome to the Python Data Structures Tutorial. In this tutorial, we will discuss the importance of data structures in programming and cover three specific data structures: Stack, Linked List, and Tree.
+Hello Python beginners! Welcome to this tutorial on data structures, where we'll learn about the Linked List. Let's begin by understanding what a data structure is.
 
-## Importance of Data Structures
+In computer science, a data structure is a particular way of collecting and organizing data so that we can perform operations on this data efficiently. They are the foundation of any complex programming task. In this tutorial, we're focusing on the Linked List.
 
-Data structures are crucial in programming as they organize, manage, and store data efficiently. They enable programmers to perform operations on data in a more efficient manner.
+## What is a Linked List?
 
-## Covered Data Structures
+A Linked List is a linear data structure where each element is a separate object. Each element (we call it a node) of a list consists of two items - the data and a reference to the next node. The last node has a reference to null. The entry point into a linked list is called the head of the list.
 
-In this tutorial, we will be covering the following data structures:
+Think about a chain of paperclips linked together. Each paperclip represents a node with a reference to the next paperclip in the chain. That's how a Linked List works in programming!
 
-2. Linked List
+## Implementing a Linked List in Python
 
-## Contact
+In Python, we can create a class to represent the nodes of the list, and another class to represent the list itself. Here is a class called Node and another called LinkedList that we'll use to simulate a linked list of items:
 
-For any questions or assistance, please contact us at lee17005@byui.edu.
+```python
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
 
----
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-# Data Structure 2: Linked List
+    def insert(self, data):
+        if not self.head:
+            self.head = Node(data)
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = Node(data)
 
-## Introduction to Linked List
+    def print_list(self):
+        current = self.head
+        while current:
+            print(current.data)
+            current = current.next
+```
 
-A linked list is a linear data structure where each element is a separate object.
+Example Image
 
-## Implementing a Linked List
+## Big O Notation in Context of Linked List Operations
 
-Linked lists can be implemented using nodes and references.
+Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. In computer science, Big O notation is used to classify algorithms according to how their run time or space requirements grow as the input size grows.
 
-## Linked List Operations
+We'll now explain the Big O notation for the Linked List operations as described in the code above:
 
-The primary operations of a linked list are:
+- `insert`: This method involves appending an item to the end of the list. In the worst case, this operation takes linear time, as we may need to traverse all the nodes. Therefore, the time complexity is O(n), where n is the number of elements in the list.
 
-- Insertion
-- Deletion
-- Traversal
+- `print_list`: This method involves traversing the list and printing each element. This operation takes linear time, as we need to visit each node once. Therefore, the time complexity is O(n), where n is the number of elements in the list.
 
-## Example
+In summary, the methods of the LinkedList class described above have a time complexity of O(n), which means they take an amount of time proportional to the number of elements in the list. This is one of the reasons why linked lists are efficient for certain tasks, such as inserting elements at the beginning of the list.
 
-Here we will demonstrate implementing a linked list and performing basic operations.
+## Using a Linked List
 
----
+Here's how we can use the LinkedList class to perform linked list operations:
+
+```python
+# We start by creating a new LinkedList
+ll = LinkedList()
+
+# We can add items to the LinkedList using the insert method
+ll.insert("Hello")
+ll.insert("World")
+
+# Printing the LinkedList should show that "Hello" was added first, and then "World"
+ll.print_list() # Output: 'Hello', 'World'
+```
+
+Example Image
 
 ## Conclusion
 
-In this tutorial, we covered three crucial data structures: stack, linked list, and tree. Each data structure has its own unique advantages and use cases. We encourage you to further explore Python data structures and continue to enhance your skills. Thank you for completing this tutorial.
+And that wraps up this introduction to the Linked List data structure in Python! Understanding data structures like the Linked List is crucial in programming, as they can significantly improve the efficiency of your code.
+
+In our upcoming tutorials, we will explore more fascinating data structures like Stacks and Trees. Keep an eye out for them!
+
+Feel free to reach out at lee17005@byui.edu for any further queries or assistance. Happy coding!

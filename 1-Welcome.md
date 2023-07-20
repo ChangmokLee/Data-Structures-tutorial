@@ -1,6 +1,6 @@
 # Python Data Structures Tutorial
 
-Welcome to my Data Structures Tutorial. In this tutorial, you'll be introduced to three of the most common data structures: Stacks, Sets, and Trees. We'll be learning about them in general, and examples will be given using Python. You can access each individual page here:
+Welcome, coding aficionados! Dive into this crash course on Data Structures, where we'll unlock the complexities of Stacks, Linked Lists, and Trees. With Python-based examples at our side, we're ready for this knowledge quest. To customize your journey, use these individual keys to each lesson:
 
 - [Stack](2-Stack.md)
 - [Linked List](3-Linked_List.md)
