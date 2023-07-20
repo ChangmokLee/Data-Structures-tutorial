@@ -42,7 +42,7 @@ class LinkedList:
             current = current.next
 ```
 
-Example Image
+![Example Image](media/LinkedList1.png)
 
 ## Big O Notation in Context of Linked List Operations
 
@@ -72,7 +72,7 @@ ll.insert("World")
 ll.print_list() # Output: 'Hello', 'World'
 ```
 
-Example Image
+![Example Image](media/LinkedList2.png)
 
 ## Conclusion
 
